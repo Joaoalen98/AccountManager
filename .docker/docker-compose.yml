@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server
+    container_name: account-db
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: Root9898*
+    ports:
+      - "1433:1433"
+    networks:
+      - account-manager
+
+networks:
+  account-manager:
+    driver: bridge
