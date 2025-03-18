@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountManager.Domain", "AccountManager.Domain\AccountManager.Domain.csproj", "{6D76E82F-65C5-41E7-9577-191C26C1BD10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountManager.Repository", "AccountManager.Repository\AccountManager.Repository.csproj", "{7B7EA4C5-E462-4521-B253-B1CB146F0AB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{6D76E82F-65C5-41E7-9577-191C26C1BD10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D76E82F-65C5-41E7-9577-191C26C1BD10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D76E82F-65C5-41E7-9577-191C26C1BD10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B7EA4C5-E462-4521-B253-B1CB146F0AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B7EA4C5-E462-4521-B253-B1CB146F0AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B7EA4C5-E462-4521-B253-B1CB146F0AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B7EA4C5-E462-4521-B253-B1CB146F0AB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
