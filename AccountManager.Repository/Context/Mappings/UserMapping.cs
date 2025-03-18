@@ -12,6 +12,10 @@ public class UserMapping : IEntityTypeConfiguration<User>
         builder.HasKey(u => u.Id);
 
         builder
+            .Property(u => u.Id)
+            .HasMaxLength(100);
+
+        builder
             .Property(u => u.Name)
             .IsRequired()
             .HasMaxLength(100);
@@ -34,7 +38,6 @@ public class UserMapping : IEntityTypeConfiguration<User>
         builder
             .HasOne(u => u.Account)
             .WithOne(a => a.User)
-            .HasForeignKey<User>(u => u.AccountNumber)
             .HasForeignKey<Account>(a => a.Number);
     }
 }

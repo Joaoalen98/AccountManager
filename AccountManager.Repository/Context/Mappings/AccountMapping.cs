@@ -9,6 +9,10 @@ public class AccountMapping : IEntityTypeConfiguration<Account>
     public void Configure(EntityTypeBuilder<Account> builder)
     {
         builder.HasKey(a => a.Number);
+
+        builder
+            .Property(a => a.Number)
+            .HasMaxLength(100);
         
         builder
             .Property(a => a.Balance)
@@ -23,7 +27,6 @@ public class AccountMapping : IEntityTypeConfiguration<Account>
         builder
             .HasOne(a => a.User)
             .WithOne(u => u.Account)
-            .HasForeignKey<Account>(a => a.UserId)
             .HasForeignKey<User>(u => u.AccountNumber);
     }
 }

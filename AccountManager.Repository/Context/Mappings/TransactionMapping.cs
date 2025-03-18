@@ -10,18 +10,19 @@ public class TransactionMapping : IEntityTypeConfiguration<Transaction>
         builder.HasKey(x => x.Id);
 
         builder
-            .HasOne(x => x.PayerAccount)
-            .WithMany(x => x.Transactions)
-            .HasForeignKey(x => x.PayerAccountNumber);
-
-        builder.HasIndex(x => x.PayerAccountNumber);
+            .Property(x => x.Id)
+            .HasMaxLength(100);
 
         builder
-            .HasOne(x => x.PayeeAccount)
+            .HasOne(x => x.Account)
             .WithMany(x => x.Transactions)
-            .HasForeignKey(x => x.PayeeAccountNumber);
+            .HasForeignKey(x => x.AccountNumber);
 
-        builder.HasIndex(x => x.PayeeAccountNumber);
+        builder.HasIndex(x => x.AccountNumber);
+
+        builder
+            .Property(x => x.AccountNumber)
+            .HasMaxLength(100);
 
         builder
             .Property(x => x.Description)
