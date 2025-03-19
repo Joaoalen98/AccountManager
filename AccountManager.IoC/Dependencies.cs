@@ -1,4 +1,5 @@
-using System;
+using AccountManager.Application.Interfaces;
+using AccountManager.Application.Services;
 using AccountManager.Repository.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,5 +15,9 @@ public static class Dependencies
         {
             options.UseSqlServer(configuration.GetConnectionString("AccountManagerDb"));
         });
+
+        services.AddScoped<ICryptService, BcryptService>();
+        services.AddScoped<IJwtService, JwtService>();
+        services.AddScoped<IUserService, UserService>();
     }
 }

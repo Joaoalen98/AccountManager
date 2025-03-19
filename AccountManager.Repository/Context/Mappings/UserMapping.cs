@@ -38,6 +38,6 @@ public class UserMapping : IEntityTypeConfiguration<User>
         builder
             .HasOne(u => u.Account)
             .WithOne(a => a.User)
-            .HasForeignKey<Account>(a => a.Number);
+            .HasForeignKey<Account>(a => a.UserId);
     }
 }
