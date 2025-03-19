@@ -18,6 +18,7 @@ public class JwtService(IOptions<JwtConfigDTO> options) : IJwtService
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+            new Claim("AccountNumber", user.AccountNumber),
         };
 
         var expires = DateTime.UtcNow.AddHours(options.Value.ExpiresInHours);

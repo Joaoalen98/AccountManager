@@ -72,6 +72,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapUserRoutes();
+app.MapAccountRoutes();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
