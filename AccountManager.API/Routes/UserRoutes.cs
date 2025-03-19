@@ -19,7 +19,7 @@ public static class UserRoutes
         group.MapPost("signin", async (IUserService userService, LoginUserDTO login) =>
             await userService.UserLogin(login.Email, login.Password));
 
-        group.MapGet("", () =>
+        group.MapGet("auth-test", () =>
         {
             return Results.Ok();
         })

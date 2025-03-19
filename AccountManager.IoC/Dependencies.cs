@@ -19,5 +19,6 @@ public static class Dependencies
         services.AddScoped<ICryptService, BcryptService>();
         services.AddScoped<IJwtService, JwtService>();
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IAccountService, AccountService>();
     }
 }

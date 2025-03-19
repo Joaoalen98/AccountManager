@@ -20,7 +20,9 @@ public class UserService(
 
     public async Task CreateUser(CreateUserDTO createUserDTO)
     {
-        var userExists = await context.Users.AnyAsync(u => u.Email == createUserDTO.Email);
+        var userExists = await context.Users
+            .AsNoTracking()
+            .AnyAsync(u => u.Email == createUserDTO.Email);
 
         if (userExists)
         {
@@ -51,7 +53,9 @@ public class UserService(
 
     public async Task<GetUserLoginDTO> UserLogin(string email, string senha)
     {
-        var user = await context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        var user = await context.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Email == email);
 
         if (user == null)
         {
