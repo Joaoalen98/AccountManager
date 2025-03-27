@@ -29,12 +29,15 @@ Este projeto é uma API desenvolvida em C# para a gestão de contas bancárias. 
    cd AccountManager
    ```
 2. Configure a string de conexão no arquivo `appsettings.json`.
-3. Dentro da pasta .docker, execute o container do banco e apos isso execute a aplicação:
+3. Dentro da pasta .docker, execute o container do banco, rode a migração do entity framework e execute a aplicação:
    ```bash
+   # entrar na pasta onde esta o docker compose e executar o container do banco
    cd .docker
    docker-compose up -d
-   
+
+   # voltar para o diretorio raiz, executar a migração do banco e a API 
    cd ..
+   dotnet ef database update -p AccountManager.Repository -s AccountManager.API
    dotnet run
    ```
 4. Acesse a documentação Swagger em: `http://localhost:5290/swagger`
