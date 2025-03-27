@@ -1,7 +1,7 @@
 using System.Net;
 using AccountManager.Application.Exceptions;
 
-namespace AccountManager.API.Infrastructure;
+namespace AccountManager.API.Infrastructure.Middlewares;
 
 public class ErrorHandlingMiddleware(RequestDelegate next, ILogger<ErrorHandlingMiddleware> logger)
 {
@@ -37,5 +37,3 @@ public class ErrorHandlingMiddleware(RequestDelegate next, ILogger<ErrorHandling
         }
     }
 }
-
-public record ErrorMessage(string Message);

@@ -1,5 +1,6 @@
 using System.Text;
 using AccountManager.API.Infrastructure;
+using AccountManager.API.Infrastructure.Middlewares;
 using AccountManager.API.Routes;
 using AccountManager.Application.DTOs.Jwt;
 using AccountManager.IoC;
