@@ -37,5 +37,5 @@ Este projeto é uma API desenvolvida em C# para a gestão de contas bancárias. 
    cd ..
    dotnet run
    ```
-4. Acesse a documentação Swagger em: `http://localhost:5290`
+4. Acesse a documentação Swagger em: `http://localhost:5290/swagger`
 
